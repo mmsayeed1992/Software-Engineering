@@ -1,0 +1,18 @@
+# Write down your multi-threading designs here!
+Q: Briefly explain how your simulation uses threads and locks
+
+A: This is my explanation of how the code works:
+
+-	Create a thread and add it to the list for every train and passenger given.
+-	In the above thread, there is an infinite loop until the “end check success” step.
+-	With the loop above, we call lock() to check if a thread can or will run.
+        o	If this is false, call await()
+        o	If true, make this event and the log -> state change of mbta
+-	Then call signalAll() and unlock().
+-   Run all the thread inside list, then “check end” every 2 seconds.
+
+
+
+
+
+
